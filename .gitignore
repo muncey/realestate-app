@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs/realestate-app
+/RealEstateApp.BusinessLogic/bin/Debug/net5.0
+/RealEstateApp.BusinessLogic/obj
+/RealEstateApp.Repository/bin/Debug/net5.0
+/RealEstateApp.Repository/obj
+/RealEstateApp.UnitTests/bin/Debug/net5.0
+/RealEstateApp.UnitTests/obj
+/TestResults
