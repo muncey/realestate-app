@@ -3,31 +3,32 @@ using FluentAssertions;
 using RealEstateApp.BusinessLogic.RealEstate.Domain;
 using RealEstateApp.BusinessLogic.RealEstate.Messages;
 using RealEstateApp.BusinessLogic.RealEstate.Services;
-using RealEstate.Repository;
+using RealEstateApp.Repository;
 using Moq;
 
 namespace RealEstateApp.UnitTests
 {
     [TestClass]
-    public class PropertyCreatorServiceTest
+    public class PropertySaleCreatorServiceTest
     {
-        private RealProperty realProperty;
-        private readonly CreateRealPropertyMessage message;
-        private readonly PropertyCreatorService propertyCreatorService;
+        private PropertySale realProperty;
+        private readonly CreatePropertySaleMessage message;
+        private readonly PropertySaleCreatorService propertyCreatorService;
         private readonly Mock<IRepository> repo;
         
-        public PropertyCreatorServiceTest()
+        public PropertySaleCreatorServiceTest()
         {
             repo = new Mock<IRepository>();
 
-            propertyCreatorService = new PropertyCreatorService(repo.Object);
-            message = new CreateRealPropertyMessage(
+            propertyCreatorService = new PropertySaleCreatorService(repo.Object);
+            message = new CreatePropertySaleMessage(
+                new AddressMessage(
                 "street-address-1",
                 "street-address-2",
                 "street-address-3",
                 "suburb", "1234",
                 "state",
-                "country",
+                "country"),
                 "headline",
                 "description", new decimal(1.1), 1, 1);
         }
@@ -41,7 +42,7 @@ namespace RealEstateApp.UnitTests
         [TestMethod]
         public void ShouldInsertRecord()
         {
-            repo.Verify(m => m.Insert<RealProperty>(realProperty));
+            repo.Verify(m => m.Insert<PropertySale>(realProperty));
         }
 
         [TestMethod]

@@ -3,8 +3,8 @@ using RealEstateApp.BusinessLogic.RealEstate.Messages;
 
 namespace RealEstateApp.BusinessLogic.RealEstate.Services
 {
-    public interface IPropertyCreatorService
+    public interface IPropertySaleCreatorService
     {
-        RealProperty Create(CreateRealPropertyMessage message);
+        PropertySale Create(CreatePropertySaleMessage message);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace RealEstateApp.BusinessLogic.RealEstate.Domain
 {
-    public class RealProperty
+    public class PropertySale
     {
         public string StreetAddress1 { get; set; }
         public string StreetAddress2 { get; set; }
